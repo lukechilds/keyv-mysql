@@ -1,5 +1,7 @@
 # keyv-mysql
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/lukechilds/keyv-mysql.svg)](https://greenkeeper.io/)
+
 > MySQL storage adapter for Keyv
 
 [![Build Status](https://travis-ci.org/lukechilds/keyv-mysql.svg?branch=master)](https://travis-ci.org/lukechilds/keyv-mysql)
