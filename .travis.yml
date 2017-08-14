@@ -7,7 +7,7 @@ node_js:
 services:
   - mysql
 addons:
-  mariadb: '10.2'
+  mariadb: '10.3'
 before_script:
   - mysql -u root -e "CREATE DATABASE keyv_test;"
   - mysql -u root -e "CREATE USER 'mysql'@'localhost';"
