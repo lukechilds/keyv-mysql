@@ -1,3 +1,4 @@
+dist: precise
 language: node_js
 node_js:
   - '8'
@@ -6,7 +7,7 @@ node_js:
 services:
   - mysql
 addons:
-  mariadb: '10.1'
+  mariadb: '10.2'
 before_script:
   - mysql -u root -e "CREATE DATABASE keyv_test;"
   - mysql -u root -e "CREATE USER 'mysql'@'localhost';"
