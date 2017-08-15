@@ -3,7 +3,7 @@ import keyvTestSuite, { keyvOfficialTests } from '@keyv/test-suite';
 import Keyv from 'keyv';
 import KeyvMysql from 'this';
 
-keyvOfficialTests(test, Keyv, 'mysql://mysql@localhost/keyv_test', 'mysql://foo');
+keyvOfficialTests(test, Keyv, 'mysql://root@localhost:3320/test', 'mysql://foo');
 
-const store = () => new KeyvMysql('mysql://mysql@localhost/keyv_test');
+const store = () => new KeyvMysql('mysql://root@localhost:3320/test');
 keyvTestSuite(test, Keyv, store);
