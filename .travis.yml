@@ -6,10 +6,9 @@ node_js:
   - '4'
 services:
   - docker
-before_script:
+before_install:
   - docker run -p 3320:3306 --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -e MYSQL_DATABASE=test -d mysql:latest
   - docker run -p 3330:3306 --name mariadb -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -e MYSQL_DATABASE=test -d mariadb:latest
-  - sleep 10
 script: npm test
 after_success: npm run coverage
 notifications:
