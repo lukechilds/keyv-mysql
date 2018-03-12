@@ -1,13 +1,14 @@
+sudo: required
 language: node_js
 node_js:
   - '8'
   - '6'
   - '4'
 services:
-  - mysql
-before_script:
-  - mysql -u root -e 'CREATE DATABASE keyv_test;'
-  - mysql -u root -e 'GRANT ALL PRIVILEGES ON keyv_test.* TO 'mysql'@'localhost';'
+  - docker
+before_install:
+  - docker run -p 3320:3306 --name mysql -e MYSQL_USER=mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -e MYSQL_DATABASE=test -d mysql:latest
+  - docker run -p 3330:3306 --name mariadb -e MYSQL_USER=mariadb -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -e MYSQL_DATABASE=test -d mariadb:latest
 script: npm test
 after_success: npm run coverage
 notifications:
